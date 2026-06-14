@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import './App.css';
+import HeroImage from './assets/Hero.jpg';
 import emailjs from "emailjs-com";
 
 const NAV_LINKS = ["Home", "About", "Experience", "Resume", "Contact"];
@@ -407,7 +408,7 @@ export default function Portfolio() {
 
                 {/* Image */}
                 <img
-                  src="/src/assets/Hero.jpg"
+                  src={HeroImage}
                   alt="Hero"
                   className="relative w-64 h-64 md:w-60 md:h-100 object-cover rounded-[28px] border border-cyan-500/30 shadow-2xl transition-transform duration-500 group-hover:scale-105"
                 />
@@ -593,7 +594,7 @@ export default function Portfolio() {
           <FadeIn delay={0.1}><p className={`text-center max-w-xl mx-auto mb-16 ${dark?"text-gray-400":"text-gray-500"}`}>A summary of my education, skills, and professional journey.</p></FadeIn>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            {[{value:2,label:"Years Experience"},{value:5,label:"Projects Completed"},{value:5,label:"Certifications"},{value:3,label:"Companies"}].map((s,i)=>(
+            {[{value:3,label:"Years Experience"},{value:5,label:"Projects Completed"},{value:5,label:"Certifications"},{value:3,label:"Companies"}].map((s,i)=>(
               <StatCard key={s.label} value={s.value} label={s.label} delay={i*0.15} />
             ))}
           </div>
